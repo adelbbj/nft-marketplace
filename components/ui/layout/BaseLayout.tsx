@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import Navbar from "../ui/navbar";
+import Navbar from "../navbar";
 
 interface IBaseLayout {
   children: React.ReactNode;
