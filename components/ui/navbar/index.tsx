@@ -3,9 +3,7 @@
 import { Disclosure, Menu } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import ActiveLink from "../Link";
-// import ActiveLink from "../link";
 
 const navigation = [
   { name: "Marketplace", href: "/", current: true },
@@ -17,8 +15,6 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  const router = useRouter();
-
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (

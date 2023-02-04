@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 
 type LinkProps = {
@@ -9,10 +9,14 @@ type LinkProps = {
   className?: string;
 };
 
-const ActiveLink: FunctionComponent<LinkProps> = ({ children, ...props }) => {
+const ActiveLink: FunctionComponent<LinkProps> = ({
+  children,
+  activeClass,
+  ...props
+}) => {
   const { pathname } = useRouter();
 
-  const isActive = pathname === props.href ? props.activeClass : "";
+  const isActive = pathname === props.href ? activeClass : "";
 
   let className = props.className || "";
   let _defaultClass = `${className} ${isActive}`;
