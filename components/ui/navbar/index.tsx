@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { useAccount } from "@/components/hooks";
+import { useWeb3 } from "@/components/providers/web3";
 import { Disclosure, Menu } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
@@ -16,7 +16,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  const { data } = useAccount("test");
+  const { hooks } = useWeb3();
+  const { data } = hooks.useAccount("test");
 
   console.log(data);
 
