@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { useAccount } from "@/components/hooks";
 import { Disclosure, Menu } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
@@ -15,6 +16,10 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+  const { data } = useAccount("test");
+
+  console.log(data);
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
