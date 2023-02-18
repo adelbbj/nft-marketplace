@@ -1,5 +1,4 @@
 import { Web3Dependencies } from "@/types/hooks";
-import { type } from "os";
 import { hookFactory as createAccountHook, UseAccountHook } from "./useAccount";
 
 export type Web3Hooks = {

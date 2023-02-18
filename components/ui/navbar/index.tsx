@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { useAccount } from "@/components/hooks/web3";
 import { useWeb3 } from "@/components/providers/web3";
 import { Disclosure, Menu } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/solid";
@@ -16,10 +17,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  const { hooks } = useWeb3();
-  const { data } = hooks.useAccount("test");
+  const { account } = useAccount();
 
-  console.log(data);
+  console.log("account.data", account.data);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">

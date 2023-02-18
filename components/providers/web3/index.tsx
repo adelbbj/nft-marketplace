@@ -12,7 +12,6 @@ import {
   Web3State,
 } from "./utils";
 import { ethers } from "ethers";
-import { setupHooks } from "@/components/hooks/web3/setupHooks";
 
 const Web3Context = createContext<Web3State>(createDefaultState());
 
@@ -46,6 +45,11 @@ const Web3Provider: FunctionComponent<any> = ({ children }) => {
 
 export function useWeb3() {
   return useContext(Web3Context);
+}
+
+export function useHooks() {
+  const { hooks } = useWeb3();
+  return hooks;
 }
 
 export default Web3Provider;
