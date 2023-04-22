@@ -7,15 +7,15 @@ import type { NextPage } from "next";
 import nfts from "../content/meta.json";
 
 const Home: NextPage = () => {
-  const { provider } = useWeb3();
+  const { provider, contract } = useWeb3();
 
-  const getAccounts = async () => {
-    const accounts = await provider?.listAccounts();
-    console.log(accounts);
+  const getNftInfo = async () => {
+    console.log(await contract!.symbol());
+    console.log(await contract!.name());
   };
 
   if (provider) {
-    getAccounts();
+    getNftInfo();
   }
 
   return (
