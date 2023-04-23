@@ -1,10 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { useAccount } from "@/components/hooks/web3";
-import { useWeb3 } from "@/components/providers/web3";
-import { Disclosure, Menu } from "@headlessui/react";
-import { BellIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/router";
+import { useAccount, useNetwork } from "@/components/hooks/web3";
+import { Disclosure } from "@headlessui/react";
 import ActiveLink from "../Link";
 import WalletBar from "./WalletBar";
 
@@ -19,6 +16,9 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const { account } = useAccount();
+  const { network } = useNetwork();
+
+  console.log(network.data);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
